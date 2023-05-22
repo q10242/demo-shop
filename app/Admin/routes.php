@@ -1,6 +1,8 @@
 <?php
 
+use App\Admin\Controllers\ProductController;
 use Illuminate\Routing\Router;
+use App\Admin\Controllers\PricingController;
 
 Admin::routes();
 
@@ -12,5 +14,7 @@ Route::group([
 ], function (Router $router) {
 
     $router->get('/', 'HomeController@index')->name('home');
-
+    
+    $router->resource('products', ProductController::class);
+    $router->resource('pricings', PricingController::class);
 });

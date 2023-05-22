@@ -8,6 +8,7 @@ use App\Models\User;
 class Pricing extends Model
 {
     use HasFactory;
+    protected $table= 'pricing';
     protected $fillable = ['user_id', 'product_id_list', 'priceing', 'user_id'];
 
     public function user()
